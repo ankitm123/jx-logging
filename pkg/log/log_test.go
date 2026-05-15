@@ -107,7 +107,7 @@ func Test_Stackdriver_log_formatter(t *testing.T) {
 	assert.NoError(t, err)
 
 	out := CaptureOutput(func() { l.Infof("hello") })
-	t.Logf(out)
+	t.Log(out)
 	assert.Equal(t, strings.HasPrefix(out, "{"), true)
 	assert.Equal(t, strings.HasSuffix(out, "}\n"), true)
 	assert.Contains(t, out, `"severity":"INFO"`)
